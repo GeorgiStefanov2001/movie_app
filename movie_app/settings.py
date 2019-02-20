@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'movies.apps.MoviesConfig',
+    'movies.apps.MoviesConfig', #telling django that our app exits by linking its config located under 'movies/apps.py'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,7 +55,13 @@ ROOT_URLCONF = 'movie_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+
+        #by manually setting 'DIRS' we tell django where our templates are located; 
+        # the best place is to make a folder 'templates' inside the app (here is under 'movies')
+        # then make a subdirectory for the app (here it is 'movies') 
+        # and a subidrectory for the admin (this makes it so we can customize some of the admin template (like base_site.html where we can change the title of the admin page))
+        'DIRS': [os.path.join(BASE_DIR),'templates'],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -104,6 +110,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
+#TODO probably should change these and set them up properly
+ 
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'

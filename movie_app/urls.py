@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    #include allows us to reference other URLconfs (like this one)
+    # it chops off of the part of the url that has matched so far and passes the other half to the other URLconf (here it passes it to 'movies/urls.py')
     path('movies/', include('movies.urls')),
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), #we don't have to use include only for the admin urls 
 ]

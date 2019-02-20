@@ -1,0 +1,12 @@
+<!-- This file is copied from C:\Users\goshko\Envs\myproject\Lib\site-packages\django\contrib\admin\templates\admin 
+    and line 8 is edited so I can have a custom name for my admin page-->
+
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">My Movie App Administration</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
