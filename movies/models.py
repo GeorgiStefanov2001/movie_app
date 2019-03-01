@@ -26,8 +26,12 @@ class Movie(models.Model):
 
 class Celebrity(models.Model):
 
-    name = models.CharField(max_length = 140)
-    age = models.IntegerField();
+    first_name = models.CharField(max_length = 140)
+    last_name = models.CharField(max_length = 140)
+    age = models.IntegerField()
     job = models.CharField(max_length = 140)
 
     career_highlight = models.TextField(default = "N/A")
+
+    def __str__(self):
+        return self.first_name + " " + self.last_name

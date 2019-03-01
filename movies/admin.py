@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Movie #importing our models
+from .models import Movie, Celebrity #importing our models
 
 class MovieAdmin(admin.ModelAdmin): #making a MovieAdmin class so we can pass it when registering a model
     #fieldsets configures the way we view the options when creating a new model (it splits them into sections like 'General Information' or 'Other', etc.)
@@ -14,4 +14,5 @@ class MovieAdmin(admin.ModelAdmin): #making a MovieAdmin class so we can pass it
 
 #this is how we register our models so we can work with them using the admin interface django provides 
 admin.site.register(Movie, MovieAdmin) #passing the MovieAdmin that was created earlier so we have more control and better interaction with the models we created
+admin.site.register(Celebrity)
 
