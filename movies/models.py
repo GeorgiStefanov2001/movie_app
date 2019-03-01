@@ -10,7 +10,7 @@ class Movie(models.Model):
     rating = models.CharField(max_length = 20)
 
     #TextField is for bigger texts
-    description = models.TextField(null = True)
+    description = models.TextField(default = "N/A")
 
     #we set auto_now to False because we don't want the movie's release date to be the current date 
     #and vice versa for auto_now_add (when adding a new model) 
@@ -23,3 +23,11 @@ class Movie(models.Model):
     
     def __str__(self):
         return self.title
+
+class Celebrity(models.Model):
+
+    name = models.CharField(max_length = 140)
+    age = models.IntegerField();
+    job = models.CharField(max_length = 140)
+
+    career_highlight = models.TextField(default = "N/A")
