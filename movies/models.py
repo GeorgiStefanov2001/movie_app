@@ -9,6 +9,10 @@ class Celebrity(models.Model):
 
     career_highlight = models.TextField(default = "N/A")
 
+    class Meta:
+        verbose_name = ("Celebrity")
+        verbose_name_plural = ("Celebrities")
+
     def __str__(self):
         return self.first_name + " " + self.last_name
 
@@ -20,6 +24,8 @@ class Movie(models.Model):
     title = models.CharField(max_length = 140) 
     genre = models.CharField(max_length = 100) 
     rating = models.CharField(max_length = 20)
+
+    duration = models.DurationField(null = True)
 
     #TextField is for bigger texts
     description = models.TextField(default = "N/A")
